@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <div class="pure-menu pure-menu-horizontal">
+            <a class="pure-menu-heading" href="">Garden Goodies</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="/guestbook" class="pure-menu-link">Community</a></li>
+                <li class="pure-menu-item"><a href="/newmessage" class="pure-menu-link">Leave a Note</a></li>
+                <li class="pure-menu-item"><a href="/ajaxmessage" class="pure-menu-link">Private Inquiry</a></li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <!-- Big div at the top -->
+    <div class="top-div">
+        <div class="text-overlay">
+            <h1>Welcome to Garden Goodies</h1>
+            <br>
+            <h4>Where we bring nature home, one plant at a time.</h4>
+            <br>
+            <br>
+            <p>Join the conversation!</p>
+            <p>Send us your requests or helpful tips right here</p>
+            <a class="pure-button" href="/newmessage">Contact us</a>
+        </div>
+    </div>
+
+    <!-- Narrow big div under the top div -->
+    <div class="narrow-big-div">
+        <div class="narrow-div">
+            <div class="image-container"></div>
+            <div class="text-container">
+                <h3>Latest Updates</h3>
+                <p>We believe that a thriving plant begins with informed care. That is why we focus on helping our customers learn how to take care of their plants. With every purchase, we include updated instruction guides that offer helpful tips and advice for keeping your plants happy and healthy. With our support, every plant can become a special part of your home, along with the knowledge you need to care for them.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section for four small round divs with a shared title -->
+    <div class="image-section">
+        <h2 class="section-title">Our Seasonal Picks</h2>
+        <div class="small-round-divs">
+            <div class="round-item">
+                <a href="https://www.google.com/search?q=jade+plant" target="_blank"> <!-- Link wrapper -->
+                    <div class="round-div image-1"></div>
+                </a>
+                <p class="round-description">Jade Plant</p>
+            </div>
+            <div class="round-item">
+                <a href="https://www.google.com/search?q=snake+plant" target="_blank"> <!-- Link wrapper -->
+                    <div class="round-div image-2"></div>
+                </a>
+                <p class="round-description">Snake Plant</p>
+            </div>
+            <div class="round-item">
+                <a href="https://www.google.com/search?q=aloe+vera" target="_blank"> <!-- Link wrapper -->
+                    <div class="round-div image-3"></div>
+                </a>
+                <p class="round-description">Aloe Vera</p>
+            </div>
+            <div class="round-item">
+                <a href="https://www.google.com/search?q=umbrella+plant" target="_blank"> <!-- Link wrapper -->
+                    <div class="round-div image-4"></div>
+                </a>
+                <p class="round-description">Umbrella Plant</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Big div with three smaller divs in it -->
+    <div class="big-div">
+        <h3>Featured Plants</h3>
+        <div class="small-div">Plant 1</div>
+        <div class="small-div">Plant 2</div>
+        <div class="small-div">Plant 3</div>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-container" style="margin-top: 50px; text-align: center;">
+        <form id="searchForm" class="pure-form">
+            <input type="text" id="searchInput" class="pure-input-rounded" placeholder="Search for pages...">
+            <button type="submit" class="pure-button">Search</button>
+        </form>
+    </div>
+
+    <!-- Page footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Garden Goodies & The Made Up Cronicles. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Client-side JavaScript to handle the search functionality
+        document.getElementById('searchForm')?.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            const query = document.getElementById('searchInput').value.toLowerCase();
+
+            // Define a simple mapping of search queries to pages
+            const pages = {
+                'home': '/',
+                'guestbook': '/guestbook',
+                'add a message': '/newmessage',
+                'ajax message': '/ajaxmessage'
+            };
+
+            // Check if the query matches any pages
+            if (pages[query]) {
+                window.location.href = pages[query]; // Redirect to the matched page
+            } else {
+                alert('Page not found.'); // Inform the user if no match is found
+            }
+        });
+    </script>
+</body>
+</html>

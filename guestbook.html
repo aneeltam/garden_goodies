@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guestbook</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Guestbook</h1>
+    <table class="pure-table">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Country</th>
+                <th>Date</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody id="messageTable">
+            <!-- Messages will be dynamically inserted here -->
+        </tbody>
+    </table>
+
+    <script>
+        // Function to load messages from the server
+        function loadMessages() {
+            fetch('/guestbook.json')
+                .then(response => response.json())
+                .then(data => {
+                    const messageTableBody = document.querySelector('#messageTable');
+                    messageTableBody.innerHTML = ''; // Clear existing messages
+
+                    data.forEach(msg => {
+                        // Check if the message should be hidden or not
+                        const hiddenClass = msg.isHidden ? 'hidden-message' : '';
+                        const row = `<tr class="${hiddenClass}">
+                            <td>${msg.username}</td>
+                            <td>${msg.country}</td>
+                            <td>${msg.date}</td>
+                            <td>${msg.message}</td>
+                        </tr>`;
+                        messageTableBody.innerHTML += row; // Append each message
+                    });
+                })
+                .catch(console.error); // Log errors
+        }
+
+        // Load messages when the page is ready
+        document.addEventListener('DOMContentLoaded', loadMessages);
+    </script>
+</body>
+</html>

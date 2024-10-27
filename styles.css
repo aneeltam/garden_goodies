@@ -1,0 +1,317 @@
+/* ajaxmessage.html */
+
+/* Centering the form on the AJAX message page */
+.ajaxmessage-body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start (top) */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    padding-top: 50px; /* Add padding from the top */
+}
+
+#ajaxForm {
+    width: 100%; /* Full width to avoid shrinking */
+    max-width: 600px; /* Set a max width for better readability */
+}
+
+/* Initially hide the messages section */
+#messagesSection {
+    display: none;
+}
+
+/* newmessage.html */
+
+/* Centering the form on the new message page */
+.newmessage-body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align items to the start (top) */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    padding-top: 50px; /* Add padding from the top */
+}
+
+#newMessageForm {
+    width: 100%; /* Full width to avoid shrinking */
+    max-width: 600px; /* Set a max width for better readability */
+}
+
+/* guestbook.html */
+
+/* Pure.css does not provide a hidden class, so we define it here */
+.hidden-message {
+    display: none;
+}
+
+/* index.html */
+
+/* Centering the header */
+.header {
+    background-color: #f8f8f8; /* Light background for the header */
+    padding: 10px 20px; /* Padding around the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    text-transform: uppercase; /* Make header text uppercase */
+}
+
+/* Styles for the site name */
+.pure-menu-heading {
+    margin-right: 20px; /* Keep some space to the right of the site name */
+    font-size: 1.5em; /* Adjust font size as needed */
+}
+
+/* Individual menu item styles */
+.pure-menu-item {
+    margin: 0 5px; /* Reduced margin for closer items */
+}
+
+.pure-menu-link:hover {
+    background-color: #e2e2e2; /* Change background on hover */
+    border-radius: 5px; /* Add rounded corners on hover */
+}
+
+
+/* Styles for top div */
+.top-div {
+    background-color: #e9f5e9; /* Light green background */
+    background-image: url('https://www.capegardencentre.co.za/cdn/shop/collections/indoor-plants-onlineshop-capegarden_1200x630.jpg?v=1692115856');
+    padding: 20px;
+    margin: 0 0;
+    text-align: center;
+    border-radius: 0px;
+    height: 50vh; /* Set height to 50% of the viewport height */
+    display: flex; /* Use flexbox for vertical centering */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    position: relative;
+    overflow: hidden; /* Ensure children don't escape the boundaries */
+}
+
+/* Styles for the inner text overlay */
+.text-overlay {
+    background: rgba(255, 255, 255, 0.767); /* White background with 70% opacity */
+    padding: 40px; /* Increased padding around the text */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+    z-index: 1; /* Place it above the background */
+}
+
+/* Headings and Paragraphs Styles */
+.text-overlay h1 {
+    margin: 0; /* Remove default margin */
+    font-weight: 100;
+    font-size: 2.7em; /* Increased font size for the header */
+    text-transform: uppercase; /* Make header text uppercase */
+}
+
+.text-overlay h4 {
+    margin: 10px 0 0; /* Add margin to create space above the paragraph */
+    font-weight: 100;
+    font-size: 1.5em; /* Adjust font size as needed */
+    line-height: 1.5; /* Improve readability */
+    text-align: center; /* Center-align paragraph text */
+}
+
+.text-overlay p {
+    margin: 10px 0 0; /* Add margin to create space above the paragraph */
+    font-size: 1em; /* Adjust font size as needed */
+    line-height: 1.5; /* Improve readability */
+    text-align: center; /* Center-align paragraph text */
+}
+
+.top-div a.pure-button {
+    background-color: rgba(21, 73, 64, 0.8); /* Darker background color (default state) */
+    margin-top: 15px; /* Space above the button */
+    display: inline-block; /* Makes the link behave like a button */
+    border: 2px solid rgba(21, 73, 64, 0.726); /* Light border color */
+    color: rgb(242, 245, 244); /* Light text color (default state) */
+    padding: 10px 20px; /* Padding for the button */
+    text-transform: uppercase; /* Uppercase letters */
+    text-align: center; /* Center text */
+    font-size: 1em; /* Font size */
+    border-radius: 4px; /* Rounded corners for a softer look */
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s; /* Smooth transition for hover effects */
+}
+
+.top-div a.pure-button:hover,
+.top-div a.pure-button:focus {
+    background-color: rgba(135, 155, 152, 0.8); /* Lighter background color on hover/focus */
+    border-color: rgba(21, 73, 64, 1); /* Darker border color on hover/focus */
+    color: rgba(21, 73, 64, 0.726); /* Darker text color on hover/focus */
+    text-decoration: none; /* Remove underline */
+}
+
+
+
+/* Styles for the narrow big div */
+.narrow-big-div {
+    background-color: #ffffff; /* White background */
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+/* Styles for the inner narrow div */
+.narrow-div {
+    display: flex; /* Use Flexbox for layout */
+    height: 350px; /* Increased height for the narrow div */
+    width: 65%; /* Adjust width to make it narrower */
+    margin: 0 auto; /* Center the narrow div within the outer div */
+    border: 2px solid rgba(21, 73, 64, 0.726); /* Noticeable outline */
+    border-radius: 8px; /* Match outer border radius */
+}
+
+/* Styles for the image container */
+.image-container {
+    background-image: url('https://media.cnn.com/api/v1/images/stellar/prod/230223174854-best-plant-identification-apps-lead-cnnu.jpg?c=16x9');
+    background-size: cover; /* Cover the area */
+    background-position: center; /* Center the image */
+    width: 50%; /* Left half of the narrow div */
+    height: 100%; /* Fill the height of the narrow div */
+    border-top-left-radius: 8px; /* Round corners */
+    border-bottom-left-radius: 8px; /* Round corners */
+}
+
+/* Styles for the text container */
+.text-container {
+    padding: 20px; /* Add padding to the text */
+    width: 50%; /* Right half of the narrow div */
+    text-align: left; /* Align text to the left */
+    display: flex; /* Use flexbox for vertical alignment */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center content vertically */
+    max-width: 100%; /* Ensure it doesn't exceed the parent width */
+    overflow: hidden; /* Prevent overflow */
+    word-wrap: break-word; /* Break long words onto the next line */
+    box-sizing: border-box; /* Include padding in width calculation */
+    overflow-y: auto; /* Enable vertical scrolling when content overflows */
+}
+
+/* Styles for the text container */
+.text-container h3 {
+    margin: 10px 0 0; /* Add margin to create space above the paragraph */
+    font-weight: 100;
+    font-size: 1.5em; /* Adjust font size as needed */
+    line-height: 1.5; /* Improve readability */
+    text-align: center; /* Center-align paragraph text */
+}
+
+
+
+/* Styles for the main image section */
+.image-section {
+    background-color: #e3e6e585; /* Background color for the section */
+    padding: 30px; /* Padding around the section */
+    text-align: center; /* Center-aligns the content */
+    margin: 20px 0; /* Spacing above and below the section */
+}
+
+
+/* Styles for the section title */
+.section-title {
+    font-size: 1.4em; /* Adjust title size */
+    margin-bottom: 20px; /* Space below the title */
+    text-transform: uppercase; /* Make the title uppercase */
+    color: #1f2020; /* Optional color for the title */
+}
+
+/* Styles for the small round divs container */
+.small-round-divs {
+    display: flex;
+    justify-content: center; /* Center the round items horizontally */
+    gap: 20px; /* Space between each round item */
+    flex-wrap: wrap; /* Allow wrapping if the container is too narrow */
+}
+
+/* Round image divs - Larger size */
+.round-div {
+    width: 200px; /* Increased width for larger size */
+    height: 200px; /* Increased height for larger size */
+    background-size: cover; /* Make image cover the whole div */
+    background-position: center; /* Center the background image */
+    border-radius: 50%; /* Make the div round */
+    margin-bottom: 15px; /* Space between the image and description */
+}
+
+/* Each round item containing the image and description */
+.round-item {
+    display: flex;
+    flex-direction: column; /* Stack image and description vertically */
+    align-items: center; /* Center-align image and description */
+    max-width: 220px; /* Adjust max-width for each item to fit larger size */
+    text-align: center; /* Center-align the text */
+}
+
+/* Assign images to each round div using specific classes */
+.image-1 {
+    background-image: url('https://www.thespruce.com/thmb/xVajmKB5KHAekYdPcAGu2ifSbLI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/grow-jade-plants-indoors-1902981-recirc-79fcebb76db74f72b2892b81f011921d.jpg');
+}
+
+.image-2 {
+    background-image: url('https://www.thespruce.com/thmb/0gSCqouROL3qFiG8IgLviND-yz8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/snake-plant-care-overview-1902772-04-3f69d04885af4613bf2eda197704fe20.jpg');
+}
+
+.image-3 {
+    background-image: url('https://www.thespruce.com/thmb/N4wVisbho9_VKir1iECSRnM6VMA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/_DSC58741-476b7f7ef66d44ba8ce33cbc0d7b8dd4-8f1bec9c86124bc4bbb2b10e0ef6403b.jpg');
+}
+
+.image-4 {
+    background-image: url('https://www.thespruce.com/thmb/0KrgvpQC25SEbl0P_J4o-0tjRf8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/KaraRileySchefflera-RECIRC-cdce731067d449d4b4a17e8505ef9f24-181464a5f77d46e3a080193556b701a5.jpg');
+}
+
+/* Description styles for the round items */
+.round-description {
+    font-size: 0.9em; /* Adjust font size for description */
+    color: #555; /* Slightly darker color for text */
+    text-align: center; /* Center-align the description */
+    margin: 0; /* Remove margin around the description */
+}
+
+/* Styles for links */
+.small-round-divs a {
+    text-decoration: none; /* Remove underline */
+    display: block; /* Ensure the div fills the link area */
+    border-radius: 50%; /* Keep rounded corners */
+}
+
+/* Hover effect for the round images */
+.small-round-divs a:hover .round-div {
+    transform: scale(1.05); /* Slight zoom-in effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Add a shadow on hover */
+}
+
+
+/* General styles for big divs */
+.big-div {
+    background-color: #e9f5e9; /* Light green background */
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    border-radius: 8px;
+}
+
+
+/* Styles for small divs within big divs */
+.small-div {
+    background-color: #bc46c9; /* Light purple background */
+    padding: 10px;
+    margin: 10px;
+    border-radius: 4px;
+    display: inline-block; /* Allows the divs to sit next to each other */
+}
+
+/* Footer styles */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #e9e9e9; /* Light gray background */
+    position: relative; /* To position the footer at the bottom */
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px; /* Space above footer */
+}
