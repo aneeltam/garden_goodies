@@ -2,5 +2,19 @@
   "dependencies": {
     "body-parser": "^1.20.3",
     "express": "^4.21.1"
-  }
+  },
+  "name": "garden_goodies",
+  "version": "1.0.0",
+  "description": "guestbook_app",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node app.js"
+  },
+  "keywords": [
+    "garden_goodies"
+  ],
+  "author": "Matleena Boral",
+  "license": "ISC"
 }
