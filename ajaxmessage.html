@@ -3,13 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AJAX Message</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css"> <!-- Pure.css -->
-    <link rel="stylesheet" href="styles.css"> <!-- Your custom styles -->
+    <title>Private Inquiry</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="ajaxmessage-body">
-    <div id="ajaxFormContainer">
-        <h1>Submit a Message via AJAX</h1>
+    <div class="header">
+        <div class="pure-menu pure-menu-horizontal">
+            <a class="pure-menu-heading" href="">Garden Goodies</a>
+            <ul class="pure-menu-list">
+                <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+                <li class="pure-menu-item"><a href="/guestbook" class="pure-menu-link">Community</a></li>
+                <li class="pure-menu-item"><a href="/newmessage" class="pure-menu-link">Contact us</a></li>
+                <li class="pure-menu-item"><a href="/ajaxmessage" class="pure-menu-link">Private Inquiry</a></li>
+            </ul>
+        </div>
+    </div>
+<div class="ajaxmessage-body">
+    <div id="ajaxFormContainer" class="ajaxmessage-container">
+        <h1 class="ajaxmessage-title">Submit a private inquiry</h1>
         <form id="ajaxForm" class="pure-form pure-form-aligned">
             <fieldset>
                 <div class="pure-control-group">
@@ -31,9 +43,10 @@
             </fieldset>
         </form>
 
+
         <!-- Hidden messages section -->
         <div id="messagesSection">
-            <h2>Messages</h2>
+            <h2>Sent message</h2>
             <table class="pure-table">
                 <thead>
                     <tr>
@@ -47,7 +60,7 @@
                 </tbody>
             </table>
         </div>
-    </div>
+    </div> 
 
     <script>
         // Store AJAX messages temporarily in memory
@@ -67,7 +80,7 @@
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    alert('Your message was sent via AJAX successfully!');
+                    alert('Your message was sent successfully!');
 
                     // Show the messages section
                     document.getElementById('messagesSection').style.display = 'block';
@@ -95,16 +108,18 @@
         // Function to render AJAX messages
         function renderAjaxMessages() {
             const messageTableBody = document.querySelector('#ajaxMessageTable');
-            messageTableBody.innerHTML = ''; // Clear existing messages
+            messageTableBody.innerHTML = '';
 
+            // Loop through each message in the ajaxMessages array and create a new row for each of them
             ajaxMessages.forEach(msg => {
+                // Create a table row with columns for username, country, date, and message
                 const row = `<tr>
                     <td>${msg.username}</td>
                     <td>${msg.country}</td>
                     <td>${msg.date}</td>
                     <td>${msg.message}</td>
                 </tr>`;
-                messageTableBody.innerHTML += row; // Append each message
+                messageTableBody.innerHTML += row;
             });
         }
 
@@ -113,5 +128,6 @@
             window.history.back();
         }
     </script>
+    
 </body>
 </html>

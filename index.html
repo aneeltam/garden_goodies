@@ -14,14 +14,12 @@
             <ul class="pure-menu-list">
                 <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
                 <li class="pure-menu-item"><a href="/guestbook" class="pure-menu-link">Community</a></li>
-                <li class="pure-menu-item"><a href="/newmessage" class="pure-menu-link">Leave a Note</a></li>
+                <li class="pure-menu-item"><a href="/newmessage" class="pure-menu-link">Contact us</a></li>
                 <li class="pure-menu-item"><a href="/ajaxmessage" class="pure-menu-link">Private Inquiry</a></li>
             </ul>
         </div>
     </div>
-    
-
-    <!-- Big div at the top -->
+    <!-- Main div -->
     <div class="top-div">
         <div class="text-overlay">
             <h1>Welcome to Garden Goodies</h1>
@@ -30,7 +28,7 @@
             <br>
             <br>
             <p>Join the conversation!</p>
-            <p>Send us your requests or helpful tips right here</p>
+            <p>Share your plant requests or helpful tips right here</p>
             <a class="pure-button" href="/newmessage">Contact us</a>
         </div>
     </div>
@@ -46,30 +44,34 @@
         </div>
     </div>
 
+    <!-- Big div1 with picture -->
+    <div class="big1-div">
+    </div>
+
     <!-- Section for four small round divs with a shared title -->
     <div class="image-section">
         <h2 class="section-title">Our Seasonal Picks</h2>
         <div class="small-round-divs">
             <div class="round-item">
-                <a href="https://www.google.com/search?q=jade+plant" target="_blank"> <!-- Link wrapper -->
+                <a href="https://www.google.com/search?q=jade+plant" target="_blank">
                     <div class="round-div image-1"></div>
                 </a>
                 <p class="round-description">Jade Plant</p>
             </div>
             <div class="round-item">
-                <a href="https://www.google.com/search?q=snake+plant" target="_blank"> <!-- Link wrapper -->
+                <a href="https://www.google.com/search?q=snake+plant" target="_blank">
                     <div class="round-div image-2"></div>
                 </a>
                 <p class="round-description">Snake Plant</p>
             </div>
             <div class="round-item">
-                <a href="https://www.google.com/search?q=aloe+vera" target="_blank"> <!-- Link wrapper -->
+                <a href="https://www.google.com/search?q=aloe+vera" target="_blank">
                     <div class="round-div image-3"></div>
                 </a>
                 <p class="round-description">Aloe Vera</p>
             </div>
             <div class="round-item">
-                <a href="https://www.google.com/search?q=umbrella+plant" target="_blank"> <!-- Link wrapper -->
+                <a href="https://www.google.com/search?q=umbrella+plant" target="_blank">
                     <div class="round-div image-4"></div>
                 </a>
                 <p class="round-description">Umbrella Plant</p>
@@ -77,16 +79,12 @@
         </div>
     </div>
 
-    <!-- Big div with three smaller divs in it -->
-    <div class="big-div">
-        <h3>Featured Plants</h3>
-        <div class="small-div">Plant 1</div>
-        <div class="small-div">Plant 2</div>
-        <div class="small-div">Plant 3</div>
+    <!-- Big div2 with picture -->
+    <div class="big2-div">
     </div>
 
     <!-- Search Bar -->
-    <div class="search-container" style="margin-top: 50px; text-align: center;">
+    <div class="search-container">
         <form id="searchForm" class="pure-form">
             <input type="text" id="searchInput" class="pure-input-rounded" placeholder="Search for pages...">
             <button type="submit" class="pure-button">Search</button>
@@ -99,24 +97,42 @@
     </footer>
 
     <script>
-        // Client-side JavaScript to handle the search functionality
+        // Handle the search functionality
         document.getElementById('searchForm')?.addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the form from submitting the traditional way
+            event.preventDefault();
             const query = document.getElementById('searchInput').value.toLowerCase();
 
-            // Define a simple mapping of search queries to pages
+            // Mapping of search queries to pages
             const pages = {
                 'home': '/',
+                'home page': '/',
+                'landing page': '/',
                 'guestbook': '/guestbook',
+                'community': '/guestbook',
+                'community wall': '/guestbook',
+                'wall': '/guestbook',
+                'sign guestbook': '/guestbook',
+                'tips': '/guestbook',
+                'tricks': '/guestbook',
+                'messages': '/guestbook',
+                'request': '/newmessage',
+                'requests': '/newmessage',
                 'add a message': '/newmessage',
-                'ajax message': '/ajaxmessage'
+                'leave a message': '/newmessage',
+                'send message': '/newmessage',
+                'message': '/newmessage',
+                'ajax message': '/ajaxmessage',
+                'private message': '/ajaxmessage',
+                'private': '/ajaxmessage',
+                'inquiry': '/ajaxmessage'
             };
 
             // Check if the query matches any pages
             if (pages[query]) {
-                window.location.href = pages[query]; // Redirect to the matched page
+                // Redirect to the matched page
+                window.location.href = pages[query];
             } else {
-                alert('Page not found.'); // Inform the user if no match is found
+                alert('Page not found.');
             }
         });
     </script>

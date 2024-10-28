@@ -7,9 +7,20 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>Guestbook</h1>
-    <table class="pure-table">
+<body class="guestbook-body">
+    <div class="guestbook-header">
+    <div class="pure-menu pure-menu-horizontal">
+        <a class="pure-menu-heading" href="">Garden Goodies</a>
+        <ul class="pure-menu-list">
+            <li class="pure-menu-item"><a href="/" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item"><a href="/guestbook" class="pure-menu-link">Community</a></li>
+            <li class="pure-menu-item"><a href="/newmessage" class="pure-menu-link">Contact us</a></li>
+            <li class="pure-menu-item"><a href="/ajaxmessage" class="pure-menu-link">Private Inquiry</a></li>
+        </ul>
+    </div>
+</div>
+    <h1 class="guestbook-title">Community wall</h1>
+    <table class="pure-table guestbook-table">
         <thead>
             <tr>
                 <th>Username</th>
@@ -19,7 +30,6 @@
             </tr>
         </thead>
         <tbody id="messageTable">
-            <!-- Messages will be dynamically inserted here -->
         </tbody>
     </table>
 
@@ -30,7 +40,8 @@
                 .then(response => response.json())
                 .then(data => {
                     const messageTableBody = document.querySelector('#messageTable');
-                    messageTableBody.innerHTML = ''; // Clear existing messages
+                    // Clear existing messages
+                    messageTableBody.innerHTML = '';
 
                     data.forEach(msg => {
                         // Check if the message should be hidden or not
@@ -41,10 +52,10 @@
                             <td>${msg.date}</td>
                             <td>${msg.message}</td>
                         </tr>`;
-                        messageTableBody.innerHTML += row; // Append each message
+                        messageTableBody.innerHTML += row;
                     });
                 })
-                .catch(console.error); // Log errors
+                .catch(console.error);
         }
 
         // Load messages when the page is ready

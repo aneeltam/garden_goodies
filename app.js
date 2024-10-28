@@ -6,27 +6,26 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 
-// Serve static files from the current directory
-app.use(express.static(__dirname)); // Serves all files in the directory
+app.use(express.static(__dirname));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Serve the main index page
+// The main index page
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Serve the guestbook page
+// The guestbook page
 app.get('/guestbook', (req, res) => {
     res.sendFile(path.join(__dirname, 'guestbook.html'));
 });
 
-// Serve the new message page
+// The new message page
 app.get('/newmessage', (req, res) => {
     res.sendFile(path.join(__dirname, 'newmessage.html'));
 });
 
-// Serve the AJAX message page
+// The AJAX message page
 app.get('/ajaxmessage', (req, res) => {
     res.sendFile(path.join(__dirname, 'ajaxmessage.html'));
 });
@@ -38,8 +37,10 @@ app.get('/guestbook.json', (req, res) => {
             return res.status(500).send('Error reading guestbook data');
         }
         try {
-            const messages = JSON.parse(data); // Parse messages from the file
-            res.json(messages); // Send all messages to guestbook.html
+            // Parse messages from the file
+            const messages = JSON.parse(data);
+            // Send all messages to guestbook.html
+            res.json(messages);
         } catch (parseError) {
             return res.status(500).send('Error parsing guestbook data');
         }
@@ -72,7 +73,7 @@ app.post('/newmessage', (req, res) => {
             if (err) {
                 return res.status(500).send('Error saving message');
             }
-            res.json({ success: true }); // Send success response
+            res.json({ success: true });
         });
     });
 });
@@ -89,21 +90,28 @@ app.post('/ajaxmessage', (req, res) => {
         country,
         date: new Date().toString(),
         message,
-        isHidden: true // Mark AJAX messages as hidden
+        // Mark AJAX messages as hidden
+        isHidden: true
     };
 
+    // Read the guestbook.json file
     fs.readFile('guestbook.json', 'utf8', (err, data) => {
+        // If there's an error reading the file, send a 500 response with an error message
         if (err) {
             return res.status(500).send('Error reading guestbook data');
         }
+        // Parse the file content into a JavaScript array of messages
         const messages = JSON.parse(data);
+        // Add the new message object to the messages array
         messages.push(newMessage);
 
+        // Write the updated array back to guestbook.json in JSON format
         fs.writeFile('guestbook.json', JSON.stringify(messages, null, 2), 'utf8', (err) => {
             if (err) {
                 return res.status(500).send('Error saving message');
             }
-            res.json({ success: true }); // Send success response
+            // Send a success response if the writing was successful
+            res.json({ success: true });
         });
     });
 });
