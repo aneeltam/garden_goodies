@@ -248,6 +248,11 @@ html, body {
     border: 1px solid #ddd;
 }
 
+.guestbook-header .pure-menu-link,
+.header .pure-menu-link {
+    text-transform: uppercase;
+}
+
 /* For responsiveness */
 @media (max-width: 600px) {
     .guestbook-title {
@@ -269,11 +274,13 @@ html, body {
 /* The header */
 .header {
     background-color: #f8f8f8;
-    padding: 10px 20px;
+    padding: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     text-transform: uppercase;
+    top: 0;
+    left: 0;
 }
 
 .pure-menu-heading {
